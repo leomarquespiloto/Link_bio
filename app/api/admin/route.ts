@@ -19,5 +19,5 @@ export async function GET(){
   env.DB.prepare("SELECT link_slug,COUNT(*) total FROM link_clicks GROUP BY link_slug ORDER BY total DESC").all<{link_slug:string;total:number}>(),
   env.DB.prepare("SELECT link_slug,created_at FROM link_clicks ORDER BY id DESC LIMIT 20").all<{link_slug:string;created_at:string}>()
  ]);
- return NextResponse.json({total:all?.total??0,today:today?.total??0,byLink:links.map(x=>({slug:x.slug,title:x.title,total:grouped.results.find(y=>y.link_slug===x.slug)?.total??0})),recent:recent.results});
+ return NextResponse.json({total:all?.total??0,today:today?.total??0,byLink:links.map(x=>({slug:x.slug,title:x.title,total:grouped.results.find((y: {link_slug:string; total:number})=>y.link_slug===x.slug)?.total??0})),recent:recent.results});
 }
