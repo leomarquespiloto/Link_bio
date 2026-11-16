@@ -49,3 +49,14 @@ Copie o `database_id` retornado para o secret `CLOUDFLARE_D1_DATABASE_ID`. Depoi
 - `/api/admin`: login (POST), métricas (GET), logout (DELETE).
 
 Edite `lib/links.ts` para configurar destinos e imagens. Destinos estão como `#` e imagens devem ser adicionadas em `public/images/`. Analytics registra slug e data/hora; não armazena IP.
+
+## Padrão das artes dos banners
+
+Os quatro banners (Curso Presencial, Curso Online — Método DAC, Marques Store e Comunidade) devem seguir o padrão visual abaixo:
+
+- Dimensão exata: **1600 × 500 px**.
+- Formato: **PNG**.
+- Fundo com **transparência real**, usando canal alfa (não usar quadriculado ilustrativo de transparência).
+- Manter textos e elementos importantes dentro de uma área segura para adaptação responsiva.
+
+No painel administrativo, cada banner deverá permitir atualizar a imagem e o link de destino.
