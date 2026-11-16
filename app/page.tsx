@@ -1,0 +1,3 @@
+import {links} from "@/lib/links";
+import {LinkCard} from "@/components/link-card";
+export default function Home(){return <main className="page"><div className="shell"><header className="profile"><div className="logo">LEO MARQUES <b>95</b></div><p className="eyebrow">PILOTO · INSTRUTOR · PERFORMANCE</p><h1>DOMINE SUA MÁQUINA.<br/><em>EVOLUA SUA PILOTAGEM.</em></h1><p className="intro">Experiências, conhecimento e produtos oficiais Leo Marques Racing.</p></header><section className="links">{links.map(link=><LinkCard key={link.slug} link={link}/>)}</section><footer>LEO MARQUES RACING <b>·</b> 95</footer></div></main>;}
