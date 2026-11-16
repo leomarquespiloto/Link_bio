@@ -16,21 +16,19 @@ export function LinkCard({ link }: { link: SiteLink }) {
 
   return (
     <a
-      className={`link-card ${link.featured ? "featured" : ""}`}
+      className="link-card"
       href={link.href}
       onClick={() => void track()}
       target={link.href.startsWith("http") ? "_blank" : undefined}
       rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
+      aria-label={link.title}
     >
       <span
         className="cover"
-        style={{ backgroundImage: `linear-gradient(90deg,rgba(0,0,0,.92),rgba(0,0,0,.2)),url("${link.image}")` }}
+        role="img"
+        aria-label={link.title}
+        style={{ backgroundImage: `url("${link.image}")` }}
       />
-      <span className="copy">
-        <strong>{link.title}</strong>
-        <small>{link.description}</small>
-      </span>
-      <b className="arrow">↗</b>
     </a>
   );
 }
