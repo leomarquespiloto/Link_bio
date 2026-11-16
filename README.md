@@ -21,7 +21,7 @@ Configure estes **Repository secrets** em **Settings → Secrets and variables �
 - `ADMIN_PASSWORD`: senha de acesso ao painel `/admin`.
 - `SESSION_SECRET`: segredo aleatório forte, com pelo menos 32 caracteres.
 
-O workflow injeta o ID do D1 no arquivo de configuração durante o runner, aplica as migrações, atualiza os secrets do Worker e publica o Worker. O deploy cria/atualiza o Worker `painel`.
+O workflow injeta o ID do D1 no arquivo de configuração durante o runner, aplica as migrações, atualiza os secrets do Worker e publica o Worker `leo-marques-link-bio`.
 
 ### Provisionamento inicial do D1
 
