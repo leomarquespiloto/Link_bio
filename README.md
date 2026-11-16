@@ -21,14 +21,14 @@ Configure estes **Repository secrets** em **Settings → Secrets and variables �
 - `ADMIN_PASSWORD`: senha de acesso ao painel `/admin`.
 - `SESSION_SECRET`: segredo aleatório forte, com pelo menos 32 caracteres.
 
-O workflow injeta o ID do D1 no arquivo de configuração durante o runner, aplica as migrações, atualiza os secrets do Worker e publica o Worker. O deploy cria/atualiza o Worker `leo-marques-link-bio`.
+O workflow injeta o ID do D1 no arquivo de configuração durante o runner, aplica as migrações, atualiza os secrets do Worker e publica o Worker. O deploy cria/atualiza o Worker `painel`.
 
 ### Provisionamento inicial do D1
 
 Crie o banco uma única vez na conta Cloudflare, por exemplo:
 
 ```bash
-npx wrangler d1 create leo-marques-link-bio
+npx wrangler d1 create painel
 ```
 
 Copie o `database_id` retornado para o secret `CLOUDFLARE_D1_DATABASE_ID`. Depois disso, os pushes para `main` cuidam das migrações e dos deploys.
@@ -38,7 +38,7 @@ Copie o `database_id` retornado para o secret `CLOUDFLARE_D1_DATABASE_ID`. Depoi
 1. `npm install`
 2. Copie `.dev.vars.example` para `.dev.vars` e configure `ADMIN_PASSWORD` e `SESSION_SECRET`.
 3. Configure o `database_id` em `wrangler.jsonc` para trabalhar com D1 remoto, ou use o D1 local.
-4. Aplique a migração local: `npx wrangler d1 migrations apply leo-marques-link-bio --local`.
+4. Aplique a migração local: `npx wrangler d1 migrations apply painel --local`.
 5. Execute `npm run dev`.
 
 ## Rotas
